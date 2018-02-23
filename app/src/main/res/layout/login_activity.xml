@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="loginVM"
+            type="com.numinga.impvault.ui.login.LoginViewModel"/>
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.constraint.Guideline
+            android:id="@+id/gdlLeft"
+            android:layout_width="1dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.2"/>
+
+        <android.support.constraint.Guideline
+            android:id="@+id/gdlRight"
+            android:layout_width="1dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.8"/>
+
+        <android.support.constraint.Guideline
+            android:id="@+id/gdlTop"
+            android:layout_width="1dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.2"/>
+
+        <TextView
+            android:id="@+id/txtLoginTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/login"
+            app:layout_constraintEnd_toStartOf="@+id/gdlRight"
+            app:layout_constraintStart_toStartOf="@+id/gdlLeft"
+            app:layout_constraintTop_toTopOf="@+id/gdlTop" />
+
+        <EditText
+            android:id="@+id/txtLogin"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toStartOf="@+id/gdlRight"
+            app:layout_constraintStart_toStartOf="@+id/gdlLeft"
+            app:layout_constraintTop_toBottomOf="@+id/txtLoginTitle" />
+
+        <TextView
+            android:id="@+id/txtPassTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:hint="@string/password"
+            app:layout_constraintEnd_toStartOf="@+id/gdlRight"
+            app:layout_constraintStart_toStartOf="@+id/gdlLeft"
+            app:layout_constraintTop_toBottomOf="@+id/txtLogin" />
+
+        <EditText
+            android:id="@+id/txtPass"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            app:layout_constraintEnd_toStartOf="@+id/gdlRight"
+            app:layout_constraintStart_toStartOf="@+id/gdlLeft"
+            app:layout_constraintTop_toBottomOf="@+id/txtPassTitle" />
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

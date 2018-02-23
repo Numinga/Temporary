@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="alertVM"
+            type="com.numinga.impvault.uikit.alert.AlertDialogViewModel" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/shade">
+
+        <android.support.constraint.Guideline
+            android:id="@+id/gdlLeft"
+            android:layout_width="1dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.2" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/gdlRight"
+            android:layout_width="1dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.8" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/gdlTop"
+            android:layout_width="1dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.3" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/gdlBtn"
+            android:layout_width="1dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.7" />
+
+        <TextView
+            android:id="@+id/txtAlertTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/darkRed"
+            android:gravity="center"
+            android:padding="20dp"
+            android:text="@{alertVM.title}"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@+id/gdlRight"
+            app:layout_constraintStart_toStartOf="@+id/gdlLeft"
+            app:layout_constraintTop_toTopOf="@+id/gdlTop"
+            tools:text="@string/errorTitle"/>
+
+        <TextView
+            android:id="@+id/txtAlertMessage"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/white"
+            android:gravity="center"
+            android:text="@{alertVM.message}"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toTopOf="@id/btnAlertPositive"
+            app:layout_constraintEnd_toEndOf="@+id/gdlRight"
+            app:layout_constraintStart_toStartOf="@+id/gdlLeft"
+            app:layout_constraintTop_toBottomOf="@+id/txtAlertTitle"
+            tools:text="@string/errorUnknown"/>
+
+        <Button
+            android:id="@+id/btnAlertPositive"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="1dp"
+            android:background="@color/darkRed"
+            android:text="@{alertVM.positive}"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/gdlBtn"
+            app:layout_constraintEnd_toStartOf="@+id/btnAlertNeutral"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/gdlLeft"
+            tools:text="@string/ok"/>
+
+        <Button
+            android:id="@+id/btnAlertNeutral"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="1dp"
+            android:background="@color/darkRed"
+            android:text="@{alertVM.neutral}"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/gdlBtn"
+            app:layout_constraintEnd_toStartOf="@+id/btnAlertNegative"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/btnAlertPositive"
+            tools:text="@string/skip"/>
+
+        <Button
+            android:id="@+id/btnAlertNegative"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="1dp"
+            android:background="@color/darkRed"
+            android:text="@{alertVM.negative}"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/gdlBtn"
+            app:layout_constraintEnd_toEndOf="@+id/gdlRight"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/btnAlertNeutral"
+            tools:text="@string/cancel"/>
+
+    </android.support.constraint.ConstraintLayout>
+</layout>
